@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#E0602A" />
+<title>Inkwell &amp; Co. — Independent Booksellers Since 1974</title>
+<meta name="description" content="Inkwell &amp; Co. is an independent bookstore. Hand-picked fiction, poetry, science and history. Free shipping on orders over $35." />
+<meta property="og:title" content="Inkwell &amp; Co. — Independent Booksellers" />
+<meta property="og:description" content="Hand-picked books, curated by real booksellers. Free shipping over $35." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23E0602A'/%3E%3Cpath d='M7 9h8v15H7z' fill='%23fff'/%3E%3Cpath d='M17 9h8v15h-8z' fill='%23fff' opacity='.62'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__inner">
+    <svg class="preloader__book" viewBox="0 0 120 80" aria-hidden="true">
+      <path class="pb pb--l" d="M8 12h48v60H8z" />
+      <path class="pb pb--r" d="M64 12h48v60H64z" />
+      <path class="pb-spine" d="M60 10v64" />
+    </svg>
+    <p class="preloader__label">Inkwell &amp; Co.</p>
+  </div>
+</div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ============ ANNOUNCEMENT TICKER ============ -->
+<div class="announce" id="announce">
+  <div class="announce__track">
+    <span>Free shipping on orders over $35</span><i>&#9670;</i>
+    <span>Signed first editions in stock</span><i>&#9670;</i>
+    <span>Members save 15% every day</span><i>&#9670;</i>
+    <span>New arrivals every Thursday</span><i>&#9670;</i>
+    <span>Free shipping on orders over $35</span><i>&#9670;</i>
+    <span>Signed first editions in stock</span><i>&#9670;</i>
+    <span>Members save 15% every day</span><i>&#9670;</i>
+    <span>New arrivals every Thursday</span><i>&#9670;</i>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="shell header__inner">
+    <a class="brand" href="#home" aria-label="Inkwell and Co, home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M6 8h9v17H6z"/><path d="M17 8h9v17h-9z" opacity=".62"/></svg>
+      </span>
+      <span class="brand__text">
+        <strong>Inkwell</strong>
+        <em>&amp; Co.</em>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="#home" class="nav__link is-active">Home</a>
+      <a href="#shop" class="nav__link">Shop</a>
+      <a href="#bestsellers" class="nav__link">Bestsellers</a>
+      <a href="#story" class="nav__link">Our Story</a>
+      <a href="#reviews" class="nav__link">Reviews</a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn search-toggle" id="searchToggle" aria-label="Search books">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+      </button>
+      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle colour theme">
+        <svg class="ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+        <svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.4A8.4 8.4 0 1 1 9.6 4a6.8 6.8 0 0 0 10.4 10.4z"/></svg>
+      </button>
+      <button class="cart-btn" id="cartBtn" aria-label="Open shopping bag">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1.2 11.2a1.6 1.6 0 0 1-1.6 1.4H8.8a1.6 1.6 0 0 1-1.6-1.4z"/><path d="M9.2 8V6.6a2.8 2.8 0 0 1 5.6 0V8"/></svg>
+        <span class="cart-btn__count" id="cartCount">0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="header__search" id="headerSearch">
+    <div class="shell">
+      <svg class="hs-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+      <input type="search" id="searchInputTop" placeholder="Search by title, author or genre..." aria-label="Search books" />
+      <button class="hs-close" id="searchClose" aria-label="Close search">&times;</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero__bg" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+      <span class="hero__grain"></span>
+    </div>
+
+    <div class="shell hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow reveal" data-delay="0">
+          <span class="eyebrow__dot"></span> Independent booksellers since 1974
+        </p>
+        <h1 class="hero__title">
+          <span class="line reveal-line" data-delay="60"><span class="line__in">Every book</span></span>
+          <span class="line reveal-line" data-delay="140"><span class="line__in">you were</span></span>
+          <span class="line reveal-line" data-delay="220"><span class="line__in"><em>meant</em> to read.</span></span>
+        </h1>
+        <p class="hero__lede reveal" data-delay="300">
+          Twelve thousand titles, zero algorithms. Our booksellers read every
+          book on these shelves &mdash; and they will happily talk your ear off about
+          the right one for you.
+        </p>
+
+        <div class="hero__cta reveal" data-delay="380">
+          <a href="#shop" class="btn btn--primary" data-magnetic>
+            <span>Browse the shelves</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#bestsellers" class="btn btn--ghost" data-magnetic>
+            <span>This month's picks</span>
+          </a>
+        </div>
+
+        <dl class="hero__stats reveal" data-delay="460">
+          <div><dt><span class="count" data-count="12480">0</span>+</dt><dd>Titles in store</dd></div>
+          <div><dt><span class="count" data-count="52">0</span></dt><dd>Years trading</dd></div>
+          <div><dt><span class="count" data-count="4.9" data-decimals="1">0</span></dt><dd>Average rating</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero__art" id="heroArt">
+        <div class="hero__glow" aria-hidden="true"></div>
+        <div class="stack" id="heroStack">
+          <figure class="stack__item stack__item--3" data-depth="0.35"></figure>
+          <figure class="stack__item stack__item--2" data-depth="0.6"></figure>
+          <figure class="stack__item stack__item--1" data-depth="1"></figure>
+        </div>
+        <div class="float-card float-card--a" data-depth="1.6">
+          <span class="fc__dot"></span>
+          <div><strong>Hand-picked</strong><small>by real humans</small></div>
+        </div>
+        <div class="float-card float-card--b" data-depth="2.1">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8z"/></svg>
+          <div><strong>4.9 / 5</strong><small>18,204 readers</small></div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#shop" class="scroll-hint" aria-label="Scroll to shop">
+      <span></span> scroll
+    </a>
+  </section>
+
+  <!-- ============ GENRE MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Fiction</span><span class="m-dot">&#10022;</span>
+      <span>Poetry</span><span class="m-dot">&#10022;</span>
+      <span>Science</span><span class="m-dot">&#10022;</span>
+      <span>History</span><span class="m-dot">&#10022;</span>
+      <span>Mystery</span><span class="m-dot">&#10022;</span>
+      <span>Fantasy</span><span class="m-dot">&#10022;</span>
+      <span>Essays</span><span class="m-dot">&#10022;</span>
+      <span>Psychology</span><span class="m-dot">&#10022;</span>
+      <span>Fiction</span><span class="m-dot">&#10022;</span>
+      <span>Poetry</span><span class="m-dot">&#10022;</span>
+      <span>Science</span><span class="m-dot">&#10022;</span>
+      <span>History</span><span class="m-dot">&#10022;</span>
+      <span>Mystery</span><span class="m-dot">&#10022;</span>
+      <span>Fantasy</span><span class="m-dot">&#10022;</span>
+      <span>Essays</span><span class="m-dot">&#10022;</span>
+      <span>Psychology</span><span class="m-dot">&#10022;</span>
+    </div>
+  </div>
+
+  <!-- ============ SHOP ============ -->
+  <section class="shop section" id="shop">
+    <div class="shell">
+      <header class="section__head">
+        <p class="eyebrow reveal"><span class="eyebrow__dot"></span> The shop</p>
+        <h2 class="section__title reveal" data-delay="60">
+          Find your next <em>obsession</em>
+        </h2>
+        <p class="section__sub reveal" data-delay="120">
+          Filter, search, and sort the way a real bookshop works &mdash; by mood, by
+          genre, by what everybody else is reading.
+        </p>
+      </header>
+
+      <div class="toolbar reveal" data-delay="160">
+        <div class="toolbar__search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+          <input type="search" id="searchInput" placeholder="Search titles, authors..." aria-label="Search books" />
+        </div>
+        <div class="toolbar__select">
+          <label for="sortSelect">Sort</label>
+          <select id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="rating">Top rated</option>
+            <option value="newest">Newest</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="chips" id="genreChips" role="tablist" aria-label="Filter by genre"></div>
+
+      <p class="results-line" id="resultsLine" aria-live="polite"></p>
+
+      <div class="grid" id="bookGrid"></div>
+
+      <div class="empty" id="emptyState" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+        <h3>No books match that</h3>
+        <p>Try a different genre or clear your search.</p>
+        <button class="btn btn--ghost" id="clearFilters">Clear filters</button>
+      </div>
+
+      <div class="load-more" id="loadMoreWrap">
+        <button class="btn btn--outline" id="loadMore">
+          <span>Load more titles</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BESTSELLERS RAIL ============ -->
+  <section class="rail section" id="bestsellers">
+    <div class="shell section__head section__head--row">
+      <div>
+        <p class="eyebrow reveal"><span class="eyebrow__dot"></span> Staff favourites</p>
+        <h2 class="section__title reveal" data-delay="60">The <em>bestseller</em> shelf</h2>
+      </div>
+      <div class="rail__nav reveal" data-delay="100">
+        <button class="round-btn" id="railPrev" aria-label="Scroll left">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H6M11 6l-6 6 6 6"/></svg>
+        </button>
+        <button class="round-btn" id="railNext" aria-label="Scroll right">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="rail__viewport" id="railViewport">
+      <div class="rail__track" id="railTrack"></div>
+    </div>
+  </section>
+
+  <!-- ============ STORY / FEATURES ============ -->
+  <section class="story section" id="story">
+    <div class="shell story__grid">
+      <div class="story__copy">
+        <p class="eyebrow reveal"><span class="eyebrow__dot"></span> Why Inkwell</p>
+        <h2 class="section__title reveal" data-delay="60">
+          A bookshop that still<br /><em>answers the phone</em>
+        </h2>
+        <p class="story__lede reveal" data-delay="120">
+          We are four rooms of floor-to-ceiling shelves on Calvert Street, and a
+          website that behaves like the shop does: unhurried, opinionated, and
+          genuinely pleased to see you.
+        </p>
+
+        <ul class="feature-list">
+          <li class="reveal" data-delay="180">
+            <span class="fi">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>
+            </span>
+            <div>
+              <h3>Free shipping over $35</h3>
+              <p>Dispatched same day before 3pm, in plastic-free packaging.</p>
+            </div>
+          </li>
+          <li class="reveal" data-delay="240">
+            <span class="fi">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-7.5-9.6A4.4 4.4 0 0 1 12 8.4a4.4 4.4 0 0 1 7.5 3c0 5-7.5 9.6-7.5 9.6z"/></svg>
+            </span>
+            <div>
+              <h3>Read it, or return it</h3>
+              <p>Thirty days, no questions, even if the spine is cracked.</p>
+            </div>
+          </li>
+          <li class="reveal" data-delay="300">
+            <span class="fi">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V6a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 1.5z"/><path d="M6 17.5h13"/></svg>
+            </span>
+            <div>
+              <h3>One book, one tree</h3>
+              <p>Every order plants a sapling with our reforestation partners.</p>
+            </div>
+          </li>
+          <li class="reveal" data-delay="360">
+            <span class="fi">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M4.5 7.5l2.1 2.1M17.4 14.4l2.1 2.1M3 12h3M18 12h3M7.5 4.5l2.1 2.1M14.4 17.4l2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg>
+            </span>
+            <div>
+              <h3>Ask a bookseller</h3>
+              <p>Tell us the last book you loved. We will send you three more.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <aside class="story__aside reveal" data-delay="200">
+        <div class="quote-card">
+          <span class="quote-card__mark" aria-hidden="true">&ldquo;</span>
+          <p>
+            A book is a dream that you hold in your hand. We just try to keep the
+            right dream within reach.
+          </p>
+          <footer>
+            <span class="avatar">MH</span>
+            <div><strong>Marion Hale</strong><small>Owner, since 1974</small></div>
+          </footer>
+        </div>
+        <div class="hours-card">
+          <h4>Shop hours</h4>
+          <dl>
+            <div><dt>Mon &ndash; Thu</dt><dd>9:00 &ndash; 19:00</dd></div>
+            <div><dt>Fri &ndash; Sat</dt><dd>9:00 &ndash; 22:00</dd></div>
+            <div><dt>Sunday</dt><dd>11:00 &ndash; 17:00</dd></div>
+          </dl>
+          <p class="hours-card__note">14 Calvert Street &middot; Baltimore</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="reviews section" id="reviews">
+    <div class="shell">
+      <header class="section__head section__head--center">
+        <p class="eyebrow reveal"><span class="eyebrow__dot"></span> Reader letters</p>
+        <h2 class="section__title reveal" data-delay="60">What lands on the <em>doormat</em></h2>
+      </header>
+      <div class="slider reveal" data-delay="120">
+        <div class="slider__viewport">
+          <div class="slider__track" id="reviewTrack"></div>
+        </div>
+        <div class="slider__dots" id="reviewDots" role="tablist" aria-label="Reviews"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="newsletter" id="newsletter">
+    <div class="shell newsletter__inner">
+      <div class="newsletter__copy reveal">
+        <h2>One excellent email<br />every <em>Thursday</em>.</h2>
+        <p>A short note: three books worth your attention, one paragraph each. No noise, unsubscribe in a click.</p>
+      </div>
+      <form class="newsletter__form reveal" data-delay="100" id="newsForm" novalidate>
+        <div class="field">
+          <input type="email" id="newsEmail" placeholder="you@example.com" aria-label="Email address" required />
+          <button type="submit" class="btn btn--primary">
+            <span>Subscribe</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <p class="field__msg" id="newsMsg" role="status"></p>
+        <p class="field__fine">We send roughly 52 emails a year. That is the whole promise.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="shell footer__grid">
+    <div class="footer__brand">
+      <a class="brand" href="#home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M6 8h9v17H6z"/><path d="M17 8h9v17h-9z" opacity=".62"/></svg>
+        </span>
+        <span class="brand__text"><strong>Inkwell</strong><em>&amp; Co.</em></span>
+      </a>
+      <p>Independent booksellers on Calvert Street since 1974. Four rooms, twelve thousand titles, one very old cat.</p>
+      <div class="socials">
+        <a href="#newsletter" aria-label="Newsletter"><svg viewBox="0 0 24 24"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <a href="#reviews" aria-label="Community"><svg viewBox="0 0 24 24"><path d="M4 5h16v10H9l-5 4z"/></svg></a>
+        <a href="#shop" aria-label="Catalogue"><svg viewBox="0 0 24 24"><path d="M4 5h7v15H4z"/><path d="M13 5h7v15h-7z"/></svg></a>
+      </div>
+    </div>
+
+    <nav class="footer__col" aria-label="Shop links">
+      <h4>Shop</h4>
+      <a href="#shop">New arrivals</a>
+      <a href="#bestsellers">Bestsellers</a>
+      <a href="#shop">Signed editions</a>
+      <a href="#shop">Gift cards</a>
+    </nav>
+    <nav class="footer__col" aria-label="About links">
+      <h4>Shop info</h4>
+      <a href="#story">Our story</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#newsletter">Events</a>
+      <a href="#newsletter">Contact</a>
+    </nav>
+    <div class="footer__col">
+      <h4>Visit</h4>
+      <p>14 Calvert Street<br />Baltimore, MD 21202</p>
+      <p><a href="tel:+14105550188">+1 410 555 0188</a></p>
+      <p><a href="mailto:hello@inkwell.example">hello@inkwell.example</a></p>
+    </div>
+  </div>
+  <div class="shell footer__bar">
+    <p>&copy; <span id="year">2026</span> Inkwell &amp; Co. A demonstration storefront.</p>
+    <p>Privacy &middot; Terms &middot; Accessibility</p>
+  </div>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="scrim" id="scrim" hidden></div>
+
+<aside class="drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true">
+  <header class="drawer__head">
+    <h3>Your bag <span id="drawerCount">(0)</span></h3>
+    <button class="icon-btn" id="cartClose" aria-label="Close bag">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </header>
+
+  <div class="drawer__body" id="cartBody"></div>
+
+  <footer class="drawer__foot" id="cartFoot">
+    <div class="row"><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div>
+    <div class="row"><span>Shipping</span><strong id="cartShipping">&mdash;</strong></div>
+    <div class="row row--total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+    <div class="ship-meter">
+      <div class="ship-meter__bar"><i id="shipBar"></i></div>
+      <p id="shipNote">Add $35.00 for free shipping</p>
+    </div>
+    <button class="btn btn--primary btn--block" id="checkoutBtn">
+      <span>Checkout</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+    </button>
+  </footer>
+</aside>
+
+<!-- ============ QUICK VIEW MODAL ============ -->
+<div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Book details">
+  <div class="modal__panel" id="modalPanel"></div>
+</div>
+
+<!-- ============ TOASTS ============ -->
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<!-- ============ BACK TO TOP ============ -->
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<noscript>
+  <p style="padding:24px;text-align:center;font-family:sans-serif">
+    Inkwell &amp; Co. needs JavaScript for the shop. Please enable it to browse.
+  </p>
+</noscript>
+
+<script src="js/app.js"></script>
+</body>
+</html>
